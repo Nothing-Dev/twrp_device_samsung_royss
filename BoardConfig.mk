@@ -60,14 +60,13 @@ endif
 # Recovery Variant
 #RECOVERY_VARIANT 				:= philz
 #RECOVERY_VARIANT 				:= cm
-#RECOVERY_VARIANT 				:= twrp
-RECOVERY_VARIANT 				:= 2850mod
-#RECOVERY_VARIANT 				:= philz_cm10.1
+RECOVERY_VARIANT 				:= twrp
+#RECOVERY_VARIANT 				:= cwm
 
 TARGET_RECOVERY_FSTAB 				:= $(LOCAL_PATH)/recovery/royss.fstab
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING 		:= ../../$(LOCAL_PATH)/recovery/recovery_keys.c
 
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
+
 
 # TWRP
 #RECOVERY_SDCARD_ON_DATA 			:= true
@@ -82,9 +81,9 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT 		:= "external_sd"
 TW_DEFAULT_EXTERNAL_STORAGE 			:= true
 TW_FLASH_FROM_STORAGE 				:= true
 TW_NO_REBOOT_BOOTLOADER 			:= true
-#TW_CUSTOM_CPU_TEMP_PATH				:= "/sys/devices/platform/sec-thermistor/temperature"
-TW_BRIGHTNESS_PATH 				:= "/sys/devices/platform/msm_fb.524801/leds/lcd-backlight/brightness"
-#TWHAVE_SELINUX 					:= true
+TW_BRIGHTNESS_PATH                              := /sys/class/leds/lcd-backlight/brightness
+TARGET_USE_CUSTOM_LUN_FILE_PATH                 := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+TWHAVE_SELINUX 					:= true
 TARGET_RECOVERY_INITRC 				:= $(LOCAL_PATH)/recovery/init.rc
 TW_HAS_DOWNLOAD_MODE				:= true
 DEVICE_RESOLUTION 				:= 320x480
