@@ -20,9 +20,7 @@ $(call inherit-product, $(LOCAL_PATH)/royss.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
-# Init files
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_royss
