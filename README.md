@@ -1,4 +1,4 @@
-Copyright 2012 - The CyanogenMod Project
+Copyright 2015 - The CyanogenMod Project
 ===================================
 
 Device configurations for building TWRP for Samsung Galaxy Y2 (GT-S6310)
