@@ -43,9 +43,8 @@ BOARD_USES_GENERIC_AUDIO := true
 ##Kernel
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_PREBUILT_KERNEL				:= $(LOCAL_PATH)/kernel
-#TARGET_KERNEL_CONFIG := royss_defconfig
-#TARGET_KERNEL_SOURCE := kernel/samsung/royss
+TARGET_KERNEL_SOURCE := kernel/samsung/msm7x27a
+TARGET_KERNEL_CONFIG := cyanogenmod_royss_defconfig
 
 # Qualcomm
 BUILD_EMULATOR_OPENGL := true
@@ -63,7 +62,7 @@ endif
 RECOVERY_VARIANT 				:= twrp
 #RECOVERY_VARIANT 				:= cwm
 
-TARGET_RECOVERY_FSTAB 				:= $(LOCAL_PATH)/recovery/royss.fstab
+TARGET_RECOVERY_FSTAB 				:= $(LOCAL_PATH)/recovery/fstab.qcom
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING 		:= ../../$(LOCAL_PATH)/recovery/recovery_keys.c
 
 
@@ -84,7 +83,6 @@ TW_NO_REBOOT_BOOTLOADER 			:= true
 TW_CUSTOM_CPU_TEMP_PATH				:= "/sys/class/power_supply/battery/temp"
 TW_BRIGHTNESS_PATH                              := /sys/class/leds/lcd-backlight/brightness
 TARGET_USE_CUSTOM_LUN_FILE_PATH                 := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-TWHAVE_SELINUX 					:= false
 TARGET_RECOVERY_INITRC 				:= $(LOCAL_PATH)/recovery/init.rc
 TW_HAS_DOWNLOAD_MODE				:= true
 DEVICE_RESOLUTION 				:= 320x480
