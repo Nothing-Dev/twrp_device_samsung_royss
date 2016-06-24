@@ -18,4 +18,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_royss.mk
+    $(LOCAL_DIR)/full_royss_twrp.mk

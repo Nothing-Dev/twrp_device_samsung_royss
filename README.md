@@ -15,19 +15,19 @@ beacause it wont eat your RAM and build will be faster
 
 
 After you finshed repo sync go in your working dir/device/
-and create folder /samsung/royss and copy content of royss
+and create folder /samsung/royss_twrp and copy content of royss_twrp
 that you downloaded from here.
 
 For build recovery, run this command in terminal from your working dir 
 
         . build/envsetup.sh
-        lunch cm_royss-userdebug && make recoveryimage
+        lunch cm_royss_twrp-userdebug && make recoveryimage
 
-Your build will start and you will find your recovery.img in your working dir/out/target/product/royss
+Your build will start and you will find your recovery.img in your working dir/out/target/product/royss_twrp
 
 To make it flashable via ODIN you have to make it recovery.tar.md5
 Navigate with terminal where you save your recovey.img .
-For example cd android/out/target/product/royss
+For example cd android/out/target/product/royss_twrp
 where android is name of your working dir
 and run command:
 

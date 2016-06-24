@@ -12,19 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/samsung/royss
+LOCAL_PATH := device/samsung/royss_twrp
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(LOCAL_PATH)/royss.mk)
+$(call inherit-product, $(LOCAL_PATH)/royss_twrp.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
-
-
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_royss
-PRODUCT_DEVICE := royss
+PRODUCT_NAME := full_royss_twrp
+PRODUCT_DEVICE := royss_twrp
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-S6310

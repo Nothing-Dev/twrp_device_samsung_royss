@@ -5,15 +5,14 @@
 
 # The generic product target doesn't have any hardware-specific pieces.
 
-LOCAL_PATH := device/samsung/royss
-KERNEL_PATH := kernel/samsung/royss
+LOCAL_PATH := device/samsung/royss_twrp
 
--include vendor/samsung/royss/BoardConfigVendor.mk
+-include vendor/samsung/royss_twrp/BoardConfigVendor.mk
 
 ## Platform
 TARGET_BOARD_PLATFORM := msm7627a
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-TARGET_BOOTLOADER_BOARD_NAME := royss
+TARGET_BOOTLOADER_BOARD_NAME := royss_twrp
 TARGET_OTA_ASSERT_DEVICE := royss,GT-S6310
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -65,6 +64,9 @@ RECOVERY_VARIANT 				:= twrp
 TARGET_RECOVERY_FSTAB 				:= $(LOCAL_PATH)/recovery/fstab.qcom
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING 		:= ../../$(LOCAL_PATH)/recovery/recovery_keys.c
 
+#F2FS
+TARGET_USERIMAGES_USE_F2FS 			:= true
+
 
 
 # TWRP
@@ -73,7 +75,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH 		:= true
 SP1_NAME 					:= "internal_sd"
 SP1_BACKUP_METHOD 				:= files
 SP1_MOUNTABLE 					:= 1
-TW_INTERNAL_STORAGE_PATH 			:= "/data/media/0"
+TW_INTERNAL_STORAGE_PATH 			:= "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT 		:= "data"
 TW_EXTERNAL_STORAGE_PATH 			:= "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT 		:= "external_sd"
@@ -82,7 +84,7 @@ TW_FLASH_FROM_STORAGE 				:= true
 TW_NO_REBOOT_BOOTLOADER 			:= true
 TW_CUSTOM_CPU_TEMP_PATH				:= "/sys/class/power_supply/battery/temp"
 TW_BRIGHTNESS_PATH                              := /sys/class/leds/lcd-backlight/brightness
-TARGET_USE_CUSTOM_LUN_FILE_PATH                 := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH                 := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 TARGET_RECOVERY_INITRC 				:= $(LOCAL_PATH)/recovery/init.rc
 TW_HAS_DOWNLOAD_MODE				:= true
 DEVICE_RESOLUTION 				:= 320x480
